@@ -1,0 +1,23 @@
+// ==========================================================================
+// Keyboard styles
+// ==========================================================================
+
+  .keyrow {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .chosen {
+    background: $color-neutral;
+    border-radius: em(5);
+    font-size: $font-size-medium;
+    color: $white;
+  }
+  
+  .btn__reset {
+    padding: em(8);
+    margin: em(50) auto;
+    background: $white;
+    border-radius: em(5);
+    font-size: $font-size-medium;
+  }

@@ -1,0 +1,41 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Font stacks
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300");
+
+// Font weights 
+
+$font-size-large  : em(60);
+$font-size-medium : em(20);
+
+// Descriptive base colors
+
+$black               : #000;
+$white               : #FFF;
+$de-York             : #78CF82;
+$de-York-lighter     : #78CF82;
+$valencia            : #D94545;
+$steel-blue          : #5b85b7;
+$fiord               : #445069;
+$alto                : #D2D2D2;
+$limed-spruce        : #37474F;
+$mercury             : #E5E5E5;
+
+// Color usage
+
+$color-win: $de-York;
+$color-show: $de-York-lighter;
+$color-lose: $valencia;
+$color-start: $steel-blue;
+$color-neutral: $fiord;
+$color-neutral-light: $alto;
+$color-keys: $limed-spruce;
+$color-keys-light: $mercury;
+
+
+//Transitions
+
+$transition: all 0.2s ease-in-out;

@@ -1,0 +1,46 @@
+// ==========================================================================
+// Overlay styles
+// ==========================================================================
+
+
+#overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    color: $white;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: em(5);
+  }
+  
+  .title {
+    color: $white;
+  }
+  
+  .start {
+    background-color: $color-start;
+  }
+  
+  .btn_reset {
+    margin:  0 auto;
+    color: $color-win;
+  }
+  
+  .win {
+    background-color: $color-win;
+  }
+  
+  .win a {
+    color: $color-win;
+  }
+  
+  .lose {
+    background-color: $color-lose;
+  }
+  
+  .lose a {
+    color: $color-lose;
+  }

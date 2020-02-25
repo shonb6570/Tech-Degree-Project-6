@@ -1,0 +1,11 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// http://viljamis.com/blog/2013/prototyping-responsive-typography/?utm_source=Responsive+Design+Weekly&utm_campaign=76e7785581-Responsive_Design_Weekly_046&utm_medium=email
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
