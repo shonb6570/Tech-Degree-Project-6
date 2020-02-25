@@ -29,7 +29,7 @@ const quotes = [
 
 //Generate random quote
 
-function getRandomPhraseAsArray(){
+const getRandomPhraseAsArray = () => {
     //create random number between 1 - 7 for quote selection
     let randNum = Math.floor(Math.random() * (quotes.length));
     //retrieve object value (quote) with random number
@@ -38,11 +38,20 @@ function getRandomPhraseAsArray(){
     const ul = document.querySelector('#phrase ul');
     //create li and append to 
     const li = document.createElement("li");
-    console.log(li);
     li.textContent = randQuote;
     ul.appendChild(li);
 } 
 
 getRandomPhraseAsArray();
 
+const checkLetter = (event) => {
+    const button = document.querySelectorAll("button");
+    button.addEventListener('click', function (event) {
+    console.log(event.target);
+    });
+}
 
+checkLetter();
+
+//if a button is clicked, store value in variable 
+//loop through all letters in variable li
