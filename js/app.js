@@ -1,7 +1,12 @@
-//Keyboard and game phrase variables
+//Keyboard and game element variables
 
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
+
+//hidden letters of phrase
+const letters = document.querySelectorAll('.letter');
+//hearts
+const misses = document.querySelector('misses');
 
 //Game score 
 
@@ -51,7 +56,17 @@ const checkLetter = (event) => {
     });
 }
 
-checkLetter();
+const checkLetter = button => {
+    ​const li = document.querySelectorAll('li');
+    const letterMatch = null;
+        for (let i = 0; i < li.length; i++) {
+            if ( button === li[i].innerText ) {
+                li[i].addClass("show");
+                letterMatch = li[i].innerText;
+            } 
+            return letterMatch;
+        }
+    };
 
 //if a button is clicked, store value in variable 
 //loop through all letters in variable li
