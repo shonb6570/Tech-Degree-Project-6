@@ -49,7 +49,6 @@ const getRandomPhraseAsArray = () => {
 getRandomPhraseAsArray();
 
 console.log(li.innerText);
-console.log(letters.innerText);
 
 
 //Main problem: Const "li" is the quote element li that has been created by the getRandomPhraseAsArray function.  
