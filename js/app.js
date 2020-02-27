@@ -32,8 +32,6 @@ const quotes = [
 
 //Generate random quote
 
-const li = document.createElement("li");
-
 const getRandomPhraseAsArray = () => {
     //create random number between 1 - 7 for quote selection
     let randNum = Math.floor(Math.random() * (quotes.length));
@@ -42,8 +40,22 @@ const getRandomPhraseAsArray = () => {
     //select the ul .phrase div
     const ul = document.querySelector('#phrase ul');
     //Append to li element created in const li 
+    randQuote = randQuote.toString().split("");
+
+    //iterate though each string value in randQuote, create an li element
+    //then set the innerText of the li to the string value
+
+    for( let i = 0; i < randQuote.length; i++) {
+        document.createElement("li");
+        li.innerText = randQuote[i];  // <-- this does not work without setting a variable (how to do this without declaring a variable?) 
+            if (randQuote[i] != " ") {
+                li.className = "letter";
+            } else {
+                li.className = "space";
+            }
+        };
     li.textContent = randQuote;
-    ul.appendChild(li);
+    console.log(randQuote);
 }; 
 
 getRandomPhraseAsArray();
@@ -51,38 +63,18 @@ getRandomPhraseAsArray();
 console.log(li.innerText);
 
 
-//Main problem: Const "li" is the quote element li that has been created by the getRandomPhraseAsArray function.  
-//              Its innerText is what must be split and compared to the .keyrows button innerText.
+//Main problem: 1. Create a variable inside getRandomPhraseArray that uses the toString method 
+//                 to convert const li into string values (each letter converted into a string).btn__reset
 
-//loop through li.innerText, split and append each letter to a newly created li element
-// add the class .letter to each element (all li elements created)
-//store .letter class selector in a const "phrase"
+//              2. Add the .letter or .space class to the values
 
-//now, select .keyrows button innerText and store it in a constant "keys"
-//loop through keys.length and compare the iteration value to the phrase const.
-// -> if there is a match, add the .show class
-// -> set the .show class elements style.display value to "show" so that they appear on the screen.
-// -> if there is a match, add add .chosen class to event target that was clicked.
+//              3. Compare the key-pressed value to the values of the created string variable's values 
+//                 (iterate through the variable with the LetterKey function).
 
-//  *NOTE: I do realize that I have created a random quote generator that appends the quote to the page,
-//   which is not what is needed (i thought it was at the time... :) 
-
-
-//things I am unable to do, thus far*
-// 1.  I am not able to accurately select the innerText of .keyrow button ( i have tried storing 
-//     document.querySelectorAll('.keyrow button').innertext in a const, but it's value is undefined)
-//     it is undefined, I think, because it must be looped through.  If that is the case, how does one loop 
-//     through two different strings, to compare their values?
-
-// 2.  If I am incorrect, and what is actually required is to compare two strings by iterating through them and 
-//     comparing their iteration values(the .keyrows button innerText and the innerText of the li element that I created),
-//     then, I literally have no idea how that would be performed.  How would you create two loops and compare 
-//     their iteration values?
+//              4. If there is a match, set display to show element?
 
 
 
-
-//     numerous, failed code can be found below:
 
 
 // checkLetter.addEventListener('click', function (event) {
