@@ -55,8 +55,8 @@ const getRandomPhraseAsArray = () => {
                 li.className = "letter";
             } else {
                 li.className = "space";
-            }
-        };
+              }
+    };
 }; 
 
 getRandomPhraseAsArray();
@@ -66,7 +66,7 @@ getRandomPhraseAsArray();
 qwerty.addEventListener('click', function (event) {
     if ( event.target.tagName === "BUTTON" ) {
             event.target.className = "chosen";
-        for( let i = 0; i < letters.length; i++ ) {
+        for( const value of letters ) {
             if( event.target.innerText === letters.textContent.toLowerCase() ) {
                 letters.className = 'show';
                 matched += 1;
