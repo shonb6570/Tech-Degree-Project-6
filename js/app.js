@@ -46,16 +46,15 @@ const getRandomPhraseAsArray = () => {
     //then set the innerText of the li to the string value
 
     for( let i = 0; i < randQuote.length; i++) {
-        document.createElement("li");
-        li.innerText = randQuote[i];  // <-- this does not work without setting a variable (how to do this without declaring a variable?) 
+        const li = document.createElement("li");
+        ul.appendChild(li);
+        li.innerText = randQuote[i]; 
             if (randQuote[i] != " ") {
                 li.className = "letter";
             } else {
                 li.className = "space";
             }
         };
-    li.textContent = randQuote;
-    console.log(randQuote);
 }; 
 
 getRandomPhraseAsArray();
@@ -63,42 +62,8 @@ getRandomPhraseAsArray();
 console.log(li.innerText);
 
 
-//Main problem: 1. Create a variable inside getRandomPhraseArray that uses the toString method 
-//                 to convert const li into string values (each letter converted into a string).btn__reset
-
-//              2. Add the .letter or .space class to the values
+//Main problem:
 
 //              3. Compare the key-pressed value to the values of the created string variable's values 
 //                 (iterate through the variable with the LetterKey function).
 
-//              4. If there is a match, set display to show element?
-
-
-
-
-
-// checkLetter.addEventListener('click', function (event) {
-//     if ( event.target === 'BUTTON' ){
-//         console.log(event.target.innerText);
-//     }
-// });
-
-
-// const checkLetter = button => {
-
-//     let letterMatch = null;
-//         for (let i = 0; i < li.length; i++) {
-//             if ( event.target.tagName === 'BUTTON') {
-//                 li.addClass(" show");
-//                 letterMatch = li.innerText;
-//             } 
-//         }
-//         return letterMatch;
-//     };
-
-// qwerty.addEventListener('click', event => {
-//     if( event.target.tagName === 'BUTTON' && event.target != document.querySelector('.choosen') ) {
-//         event.target.className = 'chosen';
-//         checkLetter
-//     }
-// });
