@@ -21,8 +21,12 @@
   h2 {
     margin: em(20) 0;
     text-transform: uppercase;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     font-size: $font-size-large;
+  }
+
+  h2.header {
+    margin: em(20) 0 0;
   }
   
   button {
@@ -49,7 +53,7 @@
   
   .section {
     width: 100%;
-    padding: em(10);
+    padding-top: em(10);
   }
   
   /* Title */
@@ -59,24 +63,31 @@
   
   /* Phrase */
   
+  #phrase {
+    padding:0;
+  }
+
   .letter {
     font-size: $font-size-medium;
     height: em(65);
     width: em(65);
     padding: em(20) em(1) 0 em(1);
-    margin-right: em(2);
+    margin: em(2) em(1) 0 0;
     color: transparent;
     background: $color-neutral-light;
     border-radius: em(5);
   }
   
   .space {
-    width: em(15);
+    width: em(10);
   }
   
   .show {
-    color: $black;
     background-color: $color-show;
+    font-size: $font-size-show;
+    font-family: 'Abril Fatface';
+    color: black;
+    padding: em(3) 0;
   }
   
   

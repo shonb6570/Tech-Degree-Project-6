@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Julius+Sans+One");
 * {
   box-sizing: border-box;
 }
@@ -18,8 +18,12 @@ li, ol, ul {
 h2 {
   margin: 1.25em 0;
   text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-size: 3.75em;
+}
+
+h2.header {
+  margin: 1.25em 0 0;
 }
 
 button {
@@ -46,7 +50,7 @@ button {
 
 .section {
   width: 100%;
-  padding: 0.625em;
+  padding-top: 0.625em;
 }
 
 /* Title */
@@ -55,24 +59,31 @@ button {
 }
 
 /* Phrase */
+#phrase {
+  padding: 0;
+}
+
 .letter {
   font-size: 1.25em;
   height: 4.0625em;
   width: 4.0625em;
   padding: 1.25em 0.0625em 0 0.0625em;
-  margin-right: 0.125em;
+  margin: 0.125em 0.0625em 0 0;
   color: transparent;
   background: #D2D2D2;
   border-radius: 0.3125em;
 }
 
 .space {
-  width: 0.9375em;
+  width: 0.625em;
 }
 
 .show {
-  color: #000;
-  background-color: #78CF82;
+  background-color: #b3c4d8;
+  font-size: 2.1875em;
+  font-family: "Abril Fatface";
+  color: black;
+  padding: 0.1875em 0;
 }
 
 #overlay {
@@ -86,6 +97,11 @@ button {
   left: 0;
   right: 0;
   border-radius: 0.3125em;
+}
+
+#overlay h2 {
+  font-size: 4.6875em;
+  margin-bottom: 0.5em;
 }
 
 .title {

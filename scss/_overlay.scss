@@ -16,6 +16,11 @@
     border-radius: em(5);
   }
   
+  #overlay h2 {
+    font-size: $font-size-xlarge;
+    margin-bottom: em(8);
+  }
+
   .title {
     color: $white;
   }

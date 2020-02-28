@@ -3,14 +3,13 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const keyLetters = document.querySelectorAll('.keyrow button').innerText;
-
-//hidden letters of phrase
-const letters = document.querySelectorAll('.letters');
+let hearts = document.getElementById("scoreboard"); 
 
 //Game score 
 
-const missed = 0;
-const matched = 0;
+let missed = 0;
+let matched = 0;
+
 
 //Start button (hides start screen overlay and begins game)
 const startGame = document.querySelector('.btn_reset');
@@ -65,15 +64,23 @@ getRandomPhraseAsArray();
 
 qwerty.addEventListener('click', function (event) {
     if ( event.target.tagName === "BUTTON" ) {
-            event.target.className = "chosen";
-        for( const value of letters ) {
-            if( event.target.innerText === letters.textContent.toLowerCase() ) {
-                letters.className = 'show';
+         event.target.className = "chosen";
+        //hidden letters of phrase
+        const letters = document.querySelectorAll('.letter');
+        for( const letter of letters ) {
+            if( event.target.innerText === letter.textContent.toLowerCase() ) {
+                letter.className = 'show';
                 matched += 1;
+            } else {
+                // hearts.removeChild(hearts.childNodes[0]); 
+                missed += 1;
             }
         }
     }
+    console.log(missed);
+    console.log(matched);
 });
+
 
 //psuedo-code:
 

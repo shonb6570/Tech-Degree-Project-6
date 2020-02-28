@@ -4,19 +4,21 @@
 
 // Font stacks
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Julius+Sans+One");
 
 // Font weights 
 
+$font-size-xlarge  : em(75);
 $font-size-large  : em(60);
 $font-size-medium : em(20);
+$font-size-show: em(35);
 
 // Descriptive base colors
 
 $black               : #000;
 $white               : #FFF;
 $de-York             : #78CF82;
-$de-York-lighter     : #78CF82;
+$de-York-lighter     : rgb(179, 196, 216);
 $valencia            : #D94545;
 $steel-blue          : #5b85b7;
 $fiord               : #445069;
