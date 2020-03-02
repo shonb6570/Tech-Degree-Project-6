@@ -3,19 +3,27 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const keyLetters = document.querySelectorAll('.keyrow button').innerText;
-let hearts = document.getElementById("scoreboard"); 
+let hearts = document.querySelectorAll(".lost"); 
 
 //Game score 
 
 let missed = 0;
-let match = 0;
+let matched = 0;
+
+// Randomly chosen quote string length
+let randQuote;
+let quoteLength;
+
+
+//Start screen overlay
+const overlay = document.querySelector('.start')
 
 
 //Start button (hides start screen overlay and begins game)
 const startGame = document.querySelector('.btn_reset');
 
 startGame.addEventListener('click', function () {
-    document.querySelector('.start').style.display = 'none'; 
+    overlay.style.display = 'none'; 
 });
 
 
@@ -38,7 +46,7 @@ const getRandomPhraseAsArray = () => {
     //create random number between 1 - 7 for quote selection
     let randNum = Math.floor( Math.random() * (quotes.length) );
     //retrieve object value (quote) with random number
-    let randQuote = quotes[randNum][1];
+    randQuote = quotes[randNum][1];
     //select the ul .phrase div
     const ul = document.querySelector('#phrase ul');
     //Append to li element created in const li 
@@ -71,27 +79,48 @@ function checkLetter(button) {
         // Adds the class show as a second class to letter 
         letters[i].classList.add("show");
         letterFound = true;
-        match += 1;
-      }  
+        matched += 1;
+      } 
     }
     return letterFound;
 }
 
+
 //keypress function
 qwerty.addEventListener('click', function (event) {
+    let match;
     if ( event.target.tagName === "BUTTON" ) {
           event.target.className = "chosen";
           // Disables button so can't be clicked twice
           event.target.disabled = true;
-          let match = checkLetter(event.target);
-        //   console.log(match);
+          match = checkLetter(event.target);
+     if(!match && missed < 6) {
+        hearts[missed].src = "images/lostHeart.png";
+        missed++;
     }
-    console.log("matched = " + match);
-    console.log("missed = " + missed);
+    //checkWin function 
+    if (matched === randQuote.length) {
+       //this statement works, but it includes the .space elements, 
+       //so the number is always larger than the actual quote (the win screen will never appear this way)
+        overlay.className = "win";
+        overlay.style.display = "flex";
+    }
+    if(show.length === letter.length) {
+        //this just comes up as undefined.  This is the issue i am having -> how do you target elements that have not been generated yet?
+        console.log("yes")
+    }
+    console.log("quote length = " + randQuote.length);
+    console.log("quote letter length = " +  quoteLength);
+    console.log("matched = " + matched);
+    console.log("missed = " + missed); 
+    console.log
+    }
 });
 
 
-//checkWin function 
+
+
+
 
 
 
