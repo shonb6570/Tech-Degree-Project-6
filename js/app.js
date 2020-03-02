@@ -113,7 +113,6 @@ qwerty.addEventListener('click', function (event) {
     console.log("quote letter length = " +  quoteLength);
     console.log("matched = " + matched);
     console.log("missed = " + missed); 
-    console.log
     }
 });
 
