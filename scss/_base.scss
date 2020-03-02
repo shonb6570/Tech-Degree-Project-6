@@ -71,7 +71,7 @@
     font-size: $font-size-medium;
     height: em(65);
     width: em(65);
-    padding: em(20) em(1) 0 em(1);
+    padding: em(20) 0 0 em(1);
     margin: em(2) em(1) 0 0;
     color: transparent;
     background: $color-neutral-light;
@@ -88,6 +88,10 @@
     font-family: 'Abril Fatface';
     color: black;
     padding: em(3) 0;
+    margin: 0;
+    height: em(30);
+    width: em(15);
+    border-radius: em(2);
   }
   
   

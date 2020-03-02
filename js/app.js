@@ -8,7 +8,7 @@ let hearts = document.getElementById("scoreboard");
 //Game score 
 
 let missed = 0;
-let matched = 0;
+let match = 0;
 
 
 //Start button (hides start screen overlay and begins game)
@@ -60,39 +60,38 @@ const getRandomPhraseAsArray = () => {
 
 getRandomPhraseAsArray();
 
-//keypress function
+//letter check function
 
+function checkLetter(button) {
+    const letters = document.querySelectorAll('.letter');
+    let letterFound = null;
+    //hidden letters of phrase
+    for (let i = 0; i < letters.length; i += 1) {
+      if (button.innerText === letters[i].textContent.toLowerCase()) {
+        // Adds the class show as a second class to letter 
+        letters[i].classList.add("show");
+        letterFound = true;
+        match += 1;
+      }  
+    }
+    return letterFound;
+}
+
+//keypress function
 qwerty.addEventListener('click', function (event) {
     if ( event.target.tagName === "BUTTON" ) {
-         event.target.className = "chosen";
-        //hidden letters of phrase
-        const letters = document.querySelectorAll('.letter');
-        for( const letter of letters ) {
-            if( event.target.innerText === letter.textContent.toLowerCase() ) {
-                letter.className = 'show';
-                matched += 1;
-            } else {
-                // hearts.removeChild(hearts.childNodes[0]); 
-                missed += 1;
-            }
-        }
+          event.target.className = "chosen";
+          // Disables button so can't be clicked twice
+          event.target.disabled = true;
+          let match = checkLetter(event.target);
+        //   console.log(match);
     }
-    console.log(missed);
-    console.log(matched);
+    console.log("matched = " + match);
+    console.log("missed = " + missed);
 });
 
 
-//psuedo-code:
+//checkWin function 
 
-//              3. Create keypress function  - compare the key-pressed value to the values of .letter                
 
-//              4. add .chosen class to target pressed
-
-//              5. if there is a match, add .show class
-
-//              6. if not a match -> missed counter ++
-
-//              7. create a checkWin function -> create a variable to store li elements that have .letter class
-//                 create a variable to store elements that have .show class
-//                 if length of the two variables is the same, display win overlay (win overlay needs to be created)
 
