@@ -12,11 +12,11 @@ let matched = 0;
 
 // Randomly chosen quote string length
 let randQuote;
-let quoteLength;
 
 
 //Start screen overlay
-const overlay = document.querySelector('.start')
+const overlay = document.querySelector('.start');
+let resetButton = document.querySelector('.btn_reset');
 
 
 //Start button (hides start screen overlay and begins game)
@@ -46,7 +46,7 @@ const getRandomPhraseAsArray = () => {
     //create random number between 1 - 7 for quote selection
     let randNum = Math.floor( Math.random() * (quotes.length) );
     //retrieve object value (quote) with random number
-    randQuote = quotes[randNum][1];
+    let randQuote = quotes[randNum][1];
     //select the ul .phrase div
     const ul = document.querySelector('#phrase ul');
     //Append to li element created in const li 
@@ -99,20 +99,19 @@ qwerty.addEventListener('click', function (event) {
         missed++;
     }
     //checkWin function 
-    if (matched === randQuote.length) {
-       //this statement works, but it includes the .space elements, 
-       //so the number is always larger than the actual quote (the win screen will never appear this way)
+    let show = document.querySelectorAll(".show");
+    let shownLetters = document.querySelectorAll(".letter");
+    if(show.length === shownLetters.length) {
         overlay.className = "win";
         overlay.style.display = "flex";
-    }
-    if(show.length === letter.length) {
-        //this just comes up as undefined.  This is the issue i am having -> how do you target elements that have not been generated yet?
-        console.log("yes")
-    }
-    console.log("quote length = " + randQuote.length);
-    console.log("quote letter length = " +  quoteLength);
-    console.log("matched = " + matched);
-    console.log("missed = " + missed); 
+        document.querySelector("h2").innerText = "You win!";
+        resetButton.innerText = "Try again?";
+    } else if (missed === 5) {
+        overlay.className = "lose";
+        overlay.style.display = "flex";
+        document.querySelector("h2").innerText = "Sorry, you lose.";
+        resetButton.innerText = "Try again?";
+        }
     }
 });
 
