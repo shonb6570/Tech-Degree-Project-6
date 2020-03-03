@@ -16,15 +16,24 @@ let randQuote;
 
 //Start screen overlay
 const overlay = document.querySelector('.start');
-let resetButton = document.querySelector('.btn_reset');
-
 
 //Start button (hides start screen overlay and begins game)
 const startGame = document.querySelector('.btn_reset');
 
-startGame.addEventListener('click', function () {
+startGame.addEventListener('click', () => {
     overlay.style.display = 'none'; 
 });
+
+//Game reset
+
+//reset function 
+
+const reset = () => {
+    startGame.addEventListener('click', () => {
+                location.reload()
+        });
+};
+
 
 
 //Game quotes
@@ -69,8 +78,7 @@ const getRandomPhraseAsArray = () => {
 getRandomPhraseAsArray();
 
 //letter check function
-
-function checkLetter(button) {
+const checkLetter = (button) => {
     const letters = document.querySelectorAll('.letter');
     let letterFound = null;
     //hidden letters of phrase
@@ -87,7 +95,7 @@ function checkLetter(button) {
 
 
 //keypress function
-qwerty.addEventListener('click', function (event) {
+qwerty.addEventListener('click', (event) => {
     let match;
     if ( event.target.tagName === "BUTTON" ) {
           event.target.className = "chosen";
@@ -105,15 +113,18 @@ qwerty.addEventListener('click', function (event) {
         overlay.className = "win";
         overlay.style.display = "flex";
         document.querySelector("h2").innerText = "You win!";
-        resetButton.innerText = "Try again?";
+        startGame.innerText = "Play again?";
+        reset();
     } else if (missed === 5) {
         overlay.className = "lose";
         overlay.style.display = "flex";
         document.querySelector("h2").innerText = "Sorry, you lose.";
-        resetButton.innerText = "Try again?";
+        startGame.innerText = "Try again?";
+        reset();
         }
     }
 });
+
 
 
 
