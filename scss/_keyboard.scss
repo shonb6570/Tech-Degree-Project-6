@@ -2,22 +2,31 @@
 // Keyboard styles
 // ==========================================================================
 
-  .keyrow {
-    display: flex;
-    justify-content: center;
+.keyrow {
+  display: flex;
+  justify-content: center;
+}
+
+.keyrow button {
+@media screen and (max-width: 600px) {
+  display: flex;
+  width: em(20);
+  height: em(40);
+  margin: em(3);
   }
-  
-  .chosen {
-    background: $color-neutral;
-    border-radius: em(5);
-    font-size: $font-size-medium;
-    color: $white;
-  }
-  
-  .btn__reset {
-    padding: em(8);
-    margin: em(50) auto;
-    background: $white;
-    border-radius: em(5);
-    font-size: $font-size-medium;
-  }
+}
+
+.chosen {
+  background: $color-neutral;
+  border-radius: em(5);
+  font-size: $font-size-medium;
+  color: $white;
+}
+
+.btn__reset {
+  padding: em(8);
+  margin: em(50) auto;
+  background: $white;
+  border-radius: em(5);
+  font-size: $font-size-medium;
+}

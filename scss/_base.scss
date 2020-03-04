@@ -11,6 +11,8 @@
     flex-direction: column;
     display: flex;
     height: 100vh;
+    overflow: hidden;
+    padding-bottom: em(100);
   }
   
   li, ol, ul {
@@ -27,6 +29,9 @@
 
   h2.header {
     margin: em(20) 0 0;
+    @media screen and (max-width: 800px) {
+    margin-top: em(10);
+    }
   }
   
   button {
@@ -55,6 +60,11 @@
     width: 100%;
     padding-top: em(10);
   }
+
+  #scoreboard {
+    padding: 0;
+  }
+
   
   /* Title */
   .header {
@@ -64,7 +74,12 @@
   /* Phrase */
   
   #phrase {
-    padding:0;
+    @media screen and (min-width: 400px) {
+      padding: 0 em(25);
+    }
+    @media screen and (min-width: 1100px) {
+      padding: 0 em(100);
+    }
   }
 
   .letter {
@@ -76,6 +91,10 @@
     color: transparent;
     background: $color-neutral-light;
     border-radius: em(5);
+    @media screen and (max-width: 900px) {
+      height: em(40);
+      width: em(40);
+    }
   }
   
   .space {
