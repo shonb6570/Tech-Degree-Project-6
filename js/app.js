@@ -110,14 +110,18 @@ qwerty.addEventListener('click', (event) => {
     let show = document.querySelectorAll(".show");
     let shownLetters = document.querySelectorAll(".letter");
     if(show.length === shownLetters.length) {
-        overlay.className = "win";
-        overlay.style.display = "flex";
+        setTimeout(function(){
+            overlay.className = "win";
+            overlay.style.display = "flex"; 
+           }, 3000);
         document.querySelector("h2").innerText = "You win!";
         startGame.innerText = "Play again?";
         reset();
     } else if (missed === 5) {
-        overlay.className = "lose";
-        overlay.style.display = "flex";
+        setTimeout(function(){
+            overlay.className = "lose";
+            overlay.style.display = "flex"; 
+           }, 300);
         document.querySelector("h2").innerText = "Sorry, you lose.";
         startGame.innerText = "Try again?";
         reset();

@@ -102,6 +102,7 @@
   }
   
   .show {
+    animation: textShadow 0.8s, grow 0.8s;
     background-color: $color-show;
     font-size: $font-size-show;
     font-family: 'Abril Fatface';

@@ -35,6 +35,10 @@
   }
   
   .win {
+	  animation-name: fade;
+	  animation-iteration-count: 1;
+	  animation-timing-function: ease-in;
+	  animation-duration: 2s;
     background-color: $color-win;
   }
   
@@ -43,6 +47,10 @@
   }
   
   .lose {
+	  animation-name: fade;
+	  animation-iteration-count: 1;
+	  animation-timing-function: ease-in;
+	  animation-duration: 2s;
     background-color: $color-lose;
   }
   
