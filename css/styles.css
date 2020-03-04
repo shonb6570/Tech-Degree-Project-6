@@ -177,6 +177,11 @@ button {
   border-radius: 0.125em;
 }
 
+img {
+  height: 2.1875em;
+  width: 1.875em;
+}
+
 #overlay {
   display: flex;
   flex-direction: column;
